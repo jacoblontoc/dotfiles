@@ -1,0 +1,60 @@
+{
+    "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+    "blocks": [
+      {
+        "alignment": "left",
+        "segments": [
+          {
+            "background": "#689d6a",
+            "foreground": "#ffffff",
+            "leading_diamond": "\ue0b6",
+            "style": "diamond",
+            "template": " {{ .UserName }} ",
+            "trailing_diamond": "\ue0b0",
+            "type": "session"
+          },
+          {
+            "background": "#928374",
+            "foreground": "#ffffff",
+            "powerline_symbol": "\ue0b0",
+            "properties": {
+              "folder_separator_icon": " \ue0b1 ",
+              "home_icon": "~",
+              "style": "folder"
+            },
+            "style": "powerline",
+            "template": " \uea83  {{ .Path }} ",
+            "type": "path"
+          },
+          {
+            "background": "#a89984",
+            "foreground": "#ffffff",
+            "properties": {
+              "always_enabled": true
+            },
+            "style": "plain",
+            "template": "<transparent>\ue0b0</> \ueba2 {{ .FormattedMs }}\u2800",
+            "type": "executiontime"
+          },
+          {
+            "background": "#98971a",
+            "background_templates": [
+              "{{ if gt .Code 0 }}#af3a03{{ end }}"
+            ],
+            "foreground": "#ffffff",
+            "properties": {
+              "always_enabled": true
+            },
+            "style": "diamond",
+            "template": "<parentBackground>\ue0b0</> \ue23a ",
+            "trailing_diamond": "\ue0b4",
+            "type": "status"
+          }
+        ],
+        "type": "prompt"
+      }
+    ],
+    "console_title_template": "{{ .Shell }} in {{ .Folder }}",
+    "final_space": true,
+    "version": 3
+  }
